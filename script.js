@@ -3,6 +3,7 @@ const menu = document.querySelector(".menu_mobile");
 const movieList = document.querySelector(".movies_list");
 let showMore = true;
 const showMoreButton = document.querySelector(".show_more");
+let dataMovie = [];
 function openMenu() {
     menu.classList.add("menu_mobile-active");
 }
@@ -23,13 +24,14 @@ async function getData() {
         if (!response.ok) throw new Error("Lỗi mạng hoặc API"); // Kiểm tra lỗi
         const data = await response.json(); // Chuyển phản hồi thành JSON
         renderData(data.shows);
+        dataMovie = data.shows;
     } catch (error) {
         console.error("Lỗi:", error.message); // Xử lý lỗi
     }
 }
 function handleShowMore() {
     showMore = !showMore;
-    getData();
+    renderData(dataMovie);
 }
 getData();
 function renderData(data) {
