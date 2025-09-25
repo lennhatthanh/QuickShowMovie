@@ -251,6 +251,7 @@ header {
     cursor: pointer;
     border: none;
     color: #ffffff;
+    white-space: nowrap;
 }
 
 .trailer {
@@ -631,7 +632,6 @@ header {
         --container-padding-secondary: 0px 4rem;
     }
     .hero h1 {
-        
     }
     .menu ul {
         gap: 10px;
@@ -643,6 +643,9 @@ header {
     }
     .footer {
         padding: 0px 4rem;
+    }
+    .movies_main {
+        padding: 0 4rem;
     }
 }
 
@@ -676,5 +679,18 @@ header {
         justify-content: flex-start;
         gap: 5rem;
     }
-    
+    .movies_main {
+        padding: 0 1.25rem;
+    }
+    .movie {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .movie__content {
+        width: 100%;
+    }
+    .date_select-container {
+        flex-direction: column;
+    }
 }
