@@ -256,6 +256,7 @@ header {
 
 .trailer {
     padding: 5rem 11rem;
+    overflow: hidden;
 }
 
 .trailer p {

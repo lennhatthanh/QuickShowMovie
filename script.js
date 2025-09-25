@@ -36,7 +36,7 @@ function handleShowMore() {
 getData();
 function renderData(data) {
     movieList.innerHTML = "";
-    const newData = showMore ? data.slice(0, 4) : data ;
+    const newData = showMore ? data.slice(0, 4) : data;
     movieList.innerHTML = newData
         .map((movie) => {
             return `
