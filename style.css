@@ -118,7 +118,7 @@ header {
 
 .movies {
     padding: var(--container-padding-secondary);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .movies_header {
@@ -256,7 +256,7 @@ header {
 
 .trailer {
     padding: 5rem 11rem;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .trailer p {
@@ -417,6 +417,7 @@ header {
     gap: 2rem;
     max-width: 72rem;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .movie__poster {
