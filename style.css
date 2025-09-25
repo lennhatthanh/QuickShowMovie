@@ -696,7 +696,11 @@ header {
     .trailer_list_item {
         height: 10rem;
     }
+    .trailer_list {
+        gap: 1rem;
+    }
 }
+
 
 .menu_mobile {
     width: 100vw;
