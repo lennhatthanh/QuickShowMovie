@@ -307,7 +307,7 @@ header {
 }
 
 .trailer_list_item img {
-    object-fit: contain;
+    object-fit: cover;
     border: 0.5rem;
     width: 100%;
     height: 100%;
@@ -692,5 +692,8 @@ header {
     }
     .date_select-container {
         flex-direction: column;
+    }
+    .trailer_list_item {
+        height: 10rem;
     }
 }
