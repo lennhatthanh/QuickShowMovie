@@ -1,10 +1,10 @@
 const images = document.querySelectorAll(".image");
 const menu = document.querySelector(".menu_mobile");
 function openMenu() {
-    menu.style.display = "block";
+    menu.classList.add("menu_mobile-active");
 }
 function closeMenu() {
-    menu.style.display = "none";
+    menu.classList.remove("menu_mobile-active");
 }
 images.forEach((image) => {
     image.addEventListener("click", () => {

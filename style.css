@@ -698,7 +698,7 @@ header {
     }
 }
 
-.menu_mobile{
+.menu_mobile {
     width: 100vw;
     height: 100vh;
     background-color: #000000b3;
@@ -707,11 +707,13 @@ header {
     top: 0;
     left: 0;
     z-index: 1001;
-    display: none;
     transition-duration: 300ms;
+    transform: translateX(-100%);
 }
-
-.menu_mobile ul{
+.menu_mobile-active {
+    transform: translateX(0);
+}
+.menu_mobile ul {
     width: 100%;
     height: 100%;
     display: flex;
