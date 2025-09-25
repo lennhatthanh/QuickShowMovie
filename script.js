@@ -1,4 +1,11 @@
 const images = document.querySelectorAll(".image");
+const menu = document.querySelector(".menu_mobile");
+function openMenu() {
+    menu.style.display = "block";
+}
+function closeMenu() {
+    menu.style.display = "none";
+}
 images.forEach((image) => {
     image.addEventListener("click", () => {
         const videoId = image.getAttribute("data-id");
