@@ -115,7 +115,9 @@ header {
     margin-top: 1rem;
     font-size: 14px;
 }
-
+.btn:hover {
+    background: #d63854;
+}
 .movies {
     padding: var(--container-padding-secondary);
     overflow-x: hidden;

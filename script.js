@@ -48,7 +48,7 @@ function renderData(data) {
                 .map((g) => g.name)
                 .join(" | ")} • ${Math.floor(movie.runtime / 60) + "h " + (movie.runtime % 60) + "m"}</p>
             <div>
-                <button>Buy Ticket</button>
+                <button class="btn">Buy Ticket</button>
                 <p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
