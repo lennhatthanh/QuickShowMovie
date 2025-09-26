@@ -50,6 +50,7 @@
                     stroke-linejoin="round"
                     class="menu_hidden"
                     aria-hidden="true"
+                    onclick="openMenu()"
                 >
                     <path d="M4 12h16"></path>
                     <path d="M4 18h16"></path>
@@ -247,11 +248,9 @@
                 </div>
             </div>
             <p class="you_may_also_like">You May Also Like</p>
-            <div class="movies_list">
-                
-            </div>
+            <div class="movies_list"></div>
             <div class="movies_footer">
-                <button class="show_more btn">Show more</button>
+                <button class="show_more btn" onclick="handleShowMore()">Show more</button>
             </div>
         </main>
         <footer class="footer">
@@ -290,7 +289,31 @@
 
             <p class="footer__copyright">Copyright 2025 © GreatStack. All Right Reserved.</p>
         </footer>
-
+        <div class="menu_mobile">
+            <ul>
+                <li>Home</li>
+                <li>Movies</li>
+                <li>Theaters</li>
+                <li>Releases</li>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-x md:hidden absolute top-6 right-6 w-6 h-6 cursor-pointer"
+                    aria-hidden="true"
+                    onclick="closeMenu()"
+                >
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>
+            </ul>
+        </div>
         <script src="./script.js"></script>
     </body>
 </html>
