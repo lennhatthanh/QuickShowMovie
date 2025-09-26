@@ -3,15 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
+        <title>QuickShow - GreatStack</title>
         <link rel="stylesheet" href="./fonts/css2" />
         <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
         <header>
-            <div class="logo">
+            <a href="/index.html" class="logo">
                 <img src="./images/logo.svg" alt="" />
-            </div>
+            </a>
             <div class="menu">
                 <ul>
                     <li>Home</li>
@@ -37,7 +38,7 @@
                     <path d="m21 21-4.34-4.34"></path>
                     <circle cx="11" cy="11" r="8"></circle>
                 </svg>
-                <button>Login</button>
+                <button class="btn">Login</button>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -156,9 +157,7 @@
                     </button>
                     <div></div>
                 </div>
-                <div class="movies_list">
-                   
-                </div>
+                <div class="movies_list"></div>
                 <div class="movies_footer">
                     <button class="btn" onclick="handleShowMore()">Show more</button>
                 </div>

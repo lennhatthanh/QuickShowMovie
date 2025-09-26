@@ -3,15 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+        <title>QuickShow - GreatStack</title>
         <link rel="stylesheet" href="./fonts/css2" />
         <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
         <header>
-            <div class="logo">
+            <a href="/index.html" class="logo">
                 <img src="./images/logo.svg" alt="" />
-            </div>
+            </a>
             <div class="menu">
                 <ul>
                     <li>Home</li>
@@ -115,7 +116,7 @@
                             Watch Trailer
                         </button>
 
-                        <a href="" class="movie__btn movie__btn--ticket btn">Buy Tickets</a>
+                        <a href="#dataSelect" class="movie__btn movie__btn--ticket btn">Buy Tickets</a>
 
                         <button class="movie__btn movie__btn--favorite">
                             <svg
@@ -142,58 +143,9 @@
 
             <p class="movies_favourite_title">Your Favorite Cast</p>
             <div class="actors">
-                <div class="actors_list">
-                    <div class="actors_list_item">
-                        <img src="./images/actor_1.webp" alt="" />
-                        <p>Taraji P. Henson</p>
-                    </div>
-                    <div class="actors_list_item">
-                        <img src="./images/actor_1.webp" alt="" />
-                        <p>Taraji P. Henson</p>
-                    </div>
-                    <div class="actors_list_item">
-                        <img src="./images/actor_1.webp" alt="" />
-                        <p>Taraji P. Henson</p>
-                    </div>
-                    <div class="actors_list_item">
-                        <img src="./images/actor_1.webp" alt="" />
-                        <p>Taraji P. Henson</p>
-                    </div>
-                    <div class="actors_list_item">
-                        <img src="./images/actor_1.webp" alt="" />
-                        <p>Taraji P. Henson</p>
-                    </div>
-                    <div class="actors_list_item">
-                        <img src="./images/actor_1.webp" alt="" />
-                        <p>Taraji P. Henson</p>
-                    </div>
-                    <div class="actors_list_item">
-                        <img src="./images/actor_1.webp" alt="" />
-                        <p>Taraji P. Henson</p>
-                    </div>
-                    <div class="actors_list_item">
-                        <img src="./images/actor_1.webp" alt="" />
-                        <p>Taraji P. Henson</p>
-                    </div>
-                    <div class="actors_list_item">
-                        <img src="./images/actor_1.webp" alt="" />
-                        <p>Taraji P. Henson</p>
-                    </div>
-                    <div class="actors_list_item">
-                        <img src="./images/actor_1.webp" alt="" />
-                        <p>Taraji P. Henson</p>
-                    </div>
-                    <div class="actors_list_item">
-                        <img src="./images/actor_1.webp" alt="" />
-                        <p>Taraji P. Henson</p>
-                    </div>
-                    <div class="actors_list_item">
-                        <img src="./images/actor_1.webp" alt="" />
-                        <p>Taraji P. Henson</p>
-                    </div>
-                </div>
+                <div class="actors_list"></div>
             </div>
-            <div class="date_select">
+            <div id="dataSelect" class="date_select">
                 <div class="date_select-container">
                     <div>
                         <p>Choose Date</p>
@@ -213,20 +165,7 @@
                             >
                                 <path d="m15 18-6-6 6-6"></path>
                             </svg>
-                            <span class="list_date">
-                                <button>
-                                    <span>11</span>
-                                    <span>Nov</span>
-                                </button>
-                                <button>
-                                    <span>12</span>
-                                    <span>Nov</span>
-                                </button>
-                                <button>
-                                    <span>13</span>
-                                    <span>Nov</span>
-                                </button>
-                            </span>
+                            <span class="list_date"> </span>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="28"

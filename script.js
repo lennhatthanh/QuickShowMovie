@@ -4,6 +4,17 @@ const movieList = document.querySelector(".movies_list");
 let showMore = true;
 const showMoreButton = document.querySelector(".show_more");
 let dataMovie = [];
+const params = new URLSearchParams(window.location.search);
+const movieId = params.get("id");
+const moviePoster = document.querySelector(".movie__poster");
+const movieLanguage = document.querySelector(".movie__language");
+const movieTitle = document.querySelector(".movie__title");
+const movieRating = document.querySelector(".movie__rating-value");
+const movieDescription = document.querySelector(".movie__description");
+const movieMeta = document.querySelector(".movie__meta");
+const actorList = document.querySelector(".actors_list");
+const listDate = document.querySelector(".list_date");
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 function openMenu() {
     menu.classList.add("menu_mobile-active");
 }
@@ -29,10 +40,25 @@ async function getData() {
         console.error("Lỗi:", error.message); // Xử lý lỗi
     }
 }
+
+async function getDataMovie() {
+    try {
+        const response = await fetch(`https://quickshow-server.vercel.app/api/show/${movieId}`); // Gửi yêu cầu GET
+        if (!response.ok) throw new Error("Lỗi mạng hoặc API"); // Kiểm tra lỗi
+
+        const data = await response.json(); // Chuyển phản hồi thành JSON
+        console.log("data", data.movie);
+        renderMovie(data);
+    } catch (error) {
+        console.error("Lỗi:", error.message); // Xử lý lỗi
+    }
+}
+getDataMovie();
 function handleShowMore() {
     showMore = !showMore;
     renderData(dataMovie);
 }
+
 getData();
 function renderData(data) {
     movieList.innerHTML = "";
@@ -41,7 +67,9 @@ function renderData(data) {
         .map((movie) => {
             return `
         <div key="${movie._id}" class="movies_list_item">
-            <img src="https://image.tmdb.org/t/p/original/${movie.poster_path}" alt="" />
+            <a href="/movie.html?id=${movie._id}" style="width: 100%">
+                <img src="https://image.tmdb.org/t/p/original/${movie.poster_path}" alt="" />
+            </a>
             <p>${movie.title}</p>
             <p>${new Date(movie.release_date).getFullYear()} • ${movie.genres
                 .slice(0, 2)
@@ -71,5 +99,36 @@ function renderData(data) {
         </div>
         `;
         })
+        .join("");
+}
+
+function renderMovie(data) {
+    console.log(data);
+    moviePoster.src = `https://image.tmdb.org/t/p/original/${data.movie.poster_path}`;
+    movieTitle.innerHTML = data.movie.title;
+    movieRating.innerHTML = `${data.movie.vote_average.toFixed(1)} User Rating`;
+    movieDescription.innerHTML = data.movie.overview;
+    movieMeta.innerHTML = `${
+        Math.floor(data.movie.runtime / 60) + "h " + (data.movie.runtime % 60) + "m"
+    } • ${data.movie.genres.map((gene) => gene.name).join(", ")} • ${new Date(data.movie.release_date).getFullYear()}`;
+    actorList.innerHTML = data.movie.casts
+        .map(
+            (actor) => `
+                <div class="actors_list_item">
+                    <img src="https://image.tmdb.org/t/p/original/${actor.profile_path}" alt="" />
+                    <p>${actor.name}</p>
+                </div>
+    `
+        )
+        .join("");
+    listDate.innerHTML = Object.keys(data.dateTime)
+        .map(
+            (date) => `
+            <button>
+                <span>${date.split("-")[2]}</span>
+                <span>${monthNames[date.split("-")[1] - 1]}</span>
+            </button>
+            `
+        )
         .join("");
 }

@@ -37,10 +37,10 @@ header {
     display: flex;
     gap: 2rem;
     padding: 12px 32px;
-    border: 0.8px #ffffff solid;
+    border: 1px #fffffa solid;
     border-radius: 3.40282e38px;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
 }
 
 .search_login {
@@ -178,12 +178,20 @@ header {
     background-color: oklch(27.8% 0.033 256.848);
     border-radius: 1rem;
     width: 16.5rem;
+    transition-duration: 300ms;
+}
+
+.movies_list_item:hover {
+    transform: translateY(-10px);
+    transition-duration: 300ms;
 }
 .movies_list_item img {
     object-fit: cover;
     object-position: right bottom;
     border-radius: 0.5rem;
     height: 13rem;
+    cursor: pointer;
+    width: 100%;
 }
 
 .movies_list_item p:first-of-type {
@@ -300,15 +308,18 @@ header {
     margin-top: 2rem;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2rem;
+    transition-duration: 300ms;
 }
-
+.trailer_list:hover .trailer_list_item img {
+    transition-duration: 300ms;
+    filter: brightness(50%);
+}
 .trailer_list_item {
     position: relative;
     max-height: 15rem;
     cursor: pointer;
     transition-duration: 300ms;
 }
-
 .trailer_list_item img {
     object-fit: cover;
     border: 0.5rem;
@@ -320,6 +331,11 @@ header {
 
 .trailer_list_item:hover {
     transform: translateY(-0.25rem);
+    transition-duration: 300ms;
+}
+
+.trailer_list_item:hover img {
+    filter: brightness(100%) !important;
     transition-duration: 300ms;
 }
 .trailer_list_item svg {
@@ -561,7 +577,7 @@ header {
 }
 
 .date_select {
-    margin-top: 7.5rem;
+    padding-top: 7.5rem;
 }
 
 .date_select-container {
@@ -606,7 +622,9 @@ header {
     max-width: 32rem;
     gap: 1rem;
 }
-
+.list_date button:focus {
+    background: #f84565;
+}
 .list_date button {
     display: flex;
     flex-direction: column;
@@ -704,7 +722,6 @@ header {
         gap: 1rem;
     }
 }
-
 
 .menu_mobile {
     width: 100vw;
